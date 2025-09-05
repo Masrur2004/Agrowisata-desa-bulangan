@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hasil Panen - Agrowisata Desa Bulangan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hp-header">
+    <h1>Hasil Panen Agrowisata</h1>
+    <p>Rekap panen komoditas Agrowisata Desa Bulangan</p>
+  </header>
+
+  <!-- Ringkasan Cepat (Cards) -->
+  <section class="hp-stats">
+    <div class="stat-card">
+      <span class="stat-title">Total Panen (YTD)</span>
+      <span class="stat-number">1.240 kg</span>
+      <span class="stat-sub">Agustus – Oktober</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-title">Musim Ini</span>
+      <span class="stat-number">356 kg</span>
+      <span class="stat-sub">Trimester III</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-title">Komoditas Aktif</span>
+      <span class="stat-number">9</span>
+      <span class="stat-sub">Buah</span>
+    </div>
+  </section>
+
+  <!-- Galeri Foto Panen -->
+  <section class="hp-gallery">
+    <h2>Galeri Panen</h2>
+    <div class="gallery-grid">
+      <figure>
+        <img src="buah naga.png" alt="Panen Buah Naga" />
+        <figcaption>Buah Naga – 120 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="buah mangga.png" alt="Panen Mangga" />
+        <figcaption>Buah Mangga – 200 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="Buah anggur.jpg" alt="Panen Anggur" />
+        <figcaption>Buah Anggur – 75 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="buah jambu.png" alt="Panen Pepaya" />
+        <figcaption> Buah jambu – 90 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="buah durian.png" alt="Panen Pisang" />
+        <figcaption>Durian – 160 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="rambutan.png" alt="Panen Sayuran" />
+        <figcaption>Rambutan – 65 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="buah alpukat.png" alt="Panen Sayuran" />
+        <figcaption>Alpukat – 65 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="buah kelengkeng.png" alt="Panen Sayuran" />
+        <figcaption>kelengkeng – 65 kg</figcaption>
+      </figure>
+      <figure>
+        <img src="buah nangka.png" alt="Panen Sayuran" />
+        <figcaption>Nangka – 65 kg</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Tabel Rekap Panen -->
+  <section class="hp-table">
+    <h2>Rekap Hasil Panen</h2>
+    <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Cari komoditas..." />
+  </div>
+    <div class="table-scroll">
+          <table class="panen-table" id="panenTable">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Komoditas</th>
+            <th>Tanggal Panen</th>
+           <th>Kg</th>
+            <th>Kualitas</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Buah Naga</td>
+            <td>12-08-2025</td>
+            <td>120</td>
+            <td>Grade A</td>
+            <td>Menunggu panen</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td> Buah mangga</td>
+            <td>07-08-2025</td>
+            <td>200</td>
+            <td>Grade A</td>
+           <td>Menunggu panen</td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td> Buah Anggur</td>
+            <td>03-08-2025</td>
+            <td>75</td>
+            <td>Grade B</td>
+         <td>Menunggu panen</td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td> Buah Kelengkeng</td>
+            <td>28-07-2025</td>
+            <td>90</td>
+            <td>Grade A</td>
+           <td>Menunggu panen</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td> Buah Rambutan</td>
+            <td>21-07-2025</td>
+            <td>160</td>
+            <td>Grade A</td>
+           <td>Menunggu panen</td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td> Buah Jambu</td>
+            <td>16-07-2025</td>
+            <td>65</td>
+            <td>Grade B</td>
+           <td>Menunggu panen</td>
+          </tr>
+            <tr>
+            <td>07</td>
+            <td> Buah nangka</td>
+            <td>16-07-2025</td>
+            <td>75</td>
+            <td>Grade B</td>
+            <td>Menunggu panen</td>
+          </tr>
+           </tr>
+            <tr>
+            <td>08</td>
+            <td> Buah Durian</td>
+            <td>16-07-2025</td>
+            <td>89</td>
+            <td>Grade B</td>
+            <td>Menunggu panen</td>
+          </tr>
+           </tr>
+            <tr>
+            <td>09</td>
+            <td> Buah Alpukat</td>
+            <td>16-07-2025</td>
+            <td>45</td>
+            <td>Grade B</td>
+            <td>Menunggu panen</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA / Informasi -->
+  <section class="hp-info">
+    <p>
+      Data di atas merupakan ringkasan hasil panen dari kelompok tani & pekarangan warga.
+    </p>
+    <a href="index.html" class="back-link"> Kembali ke Beranda</a>
+  </section>
+
+  <footer class="hp-footer">
+    <p>&copy; KKN UQ 2025 Desa Bulangan</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
