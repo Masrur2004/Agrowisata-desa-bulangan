@@ -200,10 +200,11 @@ nav {
 
 /* Semua gambar buah ukurannya sama */
 .buah-left img {
-    width: 350px;
-    height: 250px;
+    width: 100%;         /* otomatis ikut lebar kontainer */
+    max-width: 350px;    /* biar di layar besar nggak melebar terlalu jauh */
+    height: 250px;       /* tinggi konsisten */
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: cover;   /* crop gambar biar proporsional */
     transition: transform 0.3s ease;
 }
 
@@ -249,16 +250,17 @@ footer {
 }
 
 .back-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #388e3c;   /* hijau biar seragam dengan tema */
-    color: white;                /* teks putih */
-    font-weight: bold;
-    text-decoration: none;       /* hilangkan underline */
-    border-radius: 5px;          /* sudut melengkung */
-    transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;       /* biar tombolnya rapih */
+  padding: 10px 20px;
+  background: #2e7d32;        /* warna hijau */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px auto;          /* auto untuk rata tengah */
+  display: block;             /* penting untuk bisa auto center */
+  width: fit-content;         /* ukuran sesuai teks */
 }
-
 .back-link:hover {
     background-color: #2e7d32;   /* hijau lebih gelap saat hover */
     transform: translateY(-2px); /* efek tombol naik sedikit */
@@ -338,24 +340,6 @@ footer {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #444;
-}
-
-/* Tombol kembali */
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #388e3c;
-    color: white;
-    font-weight: bold;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.back-link:hover {
-    background: #2e7d32;
-    transform: translateY(-2px);
 }
 .hp-header {
   text-align: center;
@@ -542,20 +526,6 @@ footer {
 .hp-info .link { color: #2e7d32; font-weight: bold; text-decoration: none; }
 .hp-info .link:hover { text-decoration: underline; }
 
-/* Back link (seragam dengan tema) */
-.back-link {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 10px 18px;
-  background: #388e3c;
-  color: #fff;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background .25s ease, transform .2s ease;
-}
-.back-link:hover { background: #2e7d32; transform: translateY(-2px); }
-
 /* ====== Footer ====== */
 .hp-footer {
   background: #2e7d32;
@@ -578,7 +548,9 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-
+    .buah-img {
+    height: 200px;
+  }
     .buah-card img {
         width: 100%;
         height: 200px;
@@ -776,5 +748,11 @@ footer {
   .hp-stats {
     grid-template-columns: 1fr; /* jadi 1 kolom penuh */
     gap: 18px;
+  }
+  .buah-left img {
+    height: 290px;
+  }
+  .buah-img {
+    height: 150px;
   }
 }
