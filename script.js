@@ -76,3 +76,65 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Ambil elemen
+const chatToggle = document.getElementById("chatToggle");
+const chatbot = document.getElementById("chatbot");
+const closeChat = document.getElementById("closeChat");
+const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userInput");
+const chatBody = document.getElementById("chatBody");
+
+// Toggle buka/tutup chat
+chatToggle.addEventListener("click", () => {
+  chatbot.style.display = chatbot.style.display === "flex" ? "none" : "flex";
+});
+
+// Tombol X untuk menutup chat
+closeChat.addEventListener("click", () => {
+  chatbot.style.display = "none";
+});
+
+// Fungsi kirim pesan
+function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
+
+  // Pesan user
+  const userMsg = document.createElement("div");
+  userMsg.classList.add("chat-message", "user");
+  userMsg.textContent = "Anda: " + text;
+  chatBody.appendChild(userMsg);
+
+  // Balasan bot sederhana
+  const botMsg = document.createElement("div");
+  botMsg.classList.add("chat-message", "bot");
+
+  if (text.toLowerCase().includes("dimana alamat nya")) {
+    botMsg.textContent = "Bot: Lokasi kami di Desa Bulangan, Kecamatan Dukun, Gresik.";
+   } else if (text.toLowerCase().includes("siapa yang buat website ini")) {
+    botMsg.textContent = "Bot: yang buat website ini adalah salah satu mahasiswa KKN dari Universitas Qomaruddin";
+  } else if (text.toLowerCase().includes("jam buka")) {
+    botMsg.textContent = "Bot: Agrowisata buka setiap hari pukul 08.00 - 17.00.";
+  } else {
+    botMsg.textContent = "Bot: Maaf, saya hanya bisa menjawab tentang 'alamat' dan 'jam buka'.";
+  }
+
+  chatBody.appendChild(botMsg);
+
+  // Scroll otomatis ke bawah
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  // Kosongkan input
+  userInput.value = "";
+}
+
+// Klik tombol kirim
+sendBtn.addEventListener("click", sendMessage);
+
+// Tekan Enter untuk kirim
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
