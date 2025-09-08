@@ -110,14 +110,16 @@ function sendMessage() {
   const botMsg = document.createElement("div");
   botMsg.classList.add("chat-message", "bot");
 
-  if (text.toLowerCase().includes("dimana alamat nya")) {
-    botMsg.textContent = "Bot: Lokasi kami di Desa Bulangan, Kecamatan Dukun, Gresik.";
+  if (text.toLowerCase().includes("alamat")) {
+    botMsg.textContent = "Bot: Lokasi agrowisata di Desa Bulangan, Kecamatan Dukun, Gresik.";
    } else if (text.toLowerCase().includes("siapa yang buat website ini")) {
     botMsg.textContent = "Bot: yang buat website ini adalah salah satu mahasiswa KKN dari Universitas Qomaruddin";
+    } else if (text.toLowerCase().includes("ada buah apa aja")) {
+    botMsg.textContent = "Bot: banyak misalnya: Buah naga, Buah Anggur, Buah Mangga, Buah Kelengkeng dan masih banyak lagi";
   } else if (text.toLowerCase().includes("jam buka")) {
     botMsg.textContent = "Bot: Agrowisata buka setiap hari pukul 08.00 - 17.00.";
   } else {
-    botMsg.textContent = "Bot: Maaf, saya hanya bisa menjawab tentang 'alamat' dan 'jam buka'.";
+    botMsg.textContent = "Bot: Maaf, saya hanya bisa menjawab tentang 'alamat' 'jam buka' 'siapa yang buat website ini'dan'ada buah apa aja'.";
   }
 
   chatBody.appendChild(botMsg);
