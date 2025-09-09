@@ -121,7 +121,7 @@ function sendMessage() {
   } else if (text.toLowerCase().includes("jam buka")) {
     botMsg.textContent = "Bot: Agrowisata buka setiap hari pukul 08.00 - 17.00.";
   } else {
-    botMsg.textContent = "Bot: Maaf, saya hanya bisa menjawab tentang 'alamat' 'jam buka' 'siapa yang buat website ini' 'kenapa website ini di buat' dan 'ada buah apa aja'.";
+    botMsg.textContent = "Bot: Maaf, saya hanya bisa menjawab tentang alamat jam buka siapa yang buat website ini kenapa website ini di buat dan ada buah apa aja.";
   }
 
   chatBody.appendChild(botMsg);
