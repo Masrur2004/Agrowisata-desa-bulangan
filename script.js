@@ -112,7 +112,7 @@ function sendMessage() {
 
   if (text.toLowerCase().includes("alamat")) {
     botMsg.textContent = "Bot: Lokasi agrowisata di Desa Bulangan, Kecamatan Dukun, Gresik.";
-   } else if (text.toLowerCase().includes("kenapa website ini dibuat")) {
+   } else if (text.toLowerCase().includes("kenapa website ini di buat")) {
     botMsg.textContent = "Bot: untuk edukasi agar di kenal wisatawan secara luas";
      } else if (text.toLowerCase().includes("siapa yang buat website ini")) {
     botMsg.textContent = "Bot: yang buat website ini adalah salah satu mahasiswa KKN dari Universitas Qomaruddin";
