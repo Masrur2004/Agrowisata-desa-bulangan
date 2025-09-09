@@ -84,15 +84,31 @@ const closeChat = document.getElementById("closeChat");
 const sendBtn = document.getElementById("sendBtn");
 const userInput = document.getElementById("userInput");
 const chatBody = document.getElementById("chatBody");
+const overlay = document.getElementById("chatOverlay");
 
 // Toggle buka/tutup chat
 chatToggle.addEventListener("click", () => {
-  chatbot.style.display = chatbot.style.display === "flex" ? "none" : "flex";
+  const isOpen = chatbot.style.display === "flex";
+
+  if (isOpen) {
+    chatbot.style.display = "none";
+    overlay.classList.remove("show"); // hilangkan blur
+  } else {
+    chatbot.style.display = "flex";
+    overlay.classList.add("show"); // munculkan blur
+  }
 });
 
 // Tombol X untuk menutup chat
 closeChat.addEventListener("click", () => {
   chatbot.style.display = "none";
+  overlay.classList.remove("show");
+});
+
+// Klik overlay (area luar chatbot) untuk menutup
+overlay.addEventListener("click", () => {
+  chatbot.style.display = "none";
+  overlay.classList.remove("show");
 });
 
 // Fungsi kirim pesan
@@ -112,16 +128,16 @@ function sendMessage() {
 
   if (text.toLowerCase().includes("alamat")) {
     botMsg.textContent = "Bot: Lokasi agrowisata di Desa Bulangan, Kecamatan Dukun, Gresik.";
-   } else if (text.toLowerCase().includes("kenapa website ini di buat")) {
+  } else if (text.toLowerCase().includes("kenapa website ini di buat")) {
     botMsg.textContent = "Bot: untuk edukasi agar di kenal wisatawan secara luas";
-     } else if (text.toLowerCase().includes("siapa yang buat website ini")) {
+  } else if (text.toLowerCase().includes("siapa yang buat website ini")) {
     botMsg.textContent = "Bot: yang buat website ini adalah salah satu mahasiswa KKN dari Universitas Qomaruddin";
-    } else if (text.toLowerCase().includes("ada buah apa aja")) {
+  } else if (text.toLowerCase().includes("ada buah apa aja")) {
     botMsg.textContent = "Bot: banyak misalnya: Buah naga, Buah Anggur, Buah Mangga, Buah Kelengkeng dan masih banyak lagi";
   } else if (text.toLowerCase().includes("jam buka")) {
     botMsg.textContent = "Bot: Agrowisata buka setiap hari pukul 08.00 - 17.00.";
   } else {
-    botMsg.textContent = "Bot: Maaf, saya hanya bisa menjawab tentang alamat jam buka siapa yang buat website ini kenapa website ini di buat dan ada buah apa aja.";
+    botMsg.textContent = "Bot: Maaf, saya hanya bisa menjawab tentang alamat, jam buka, siapa yang buat website ini, kenapa website ini dibuat, dan ada buah apa aja.";
   }
 
   chatBody.appendChild(botMsg);
@@ -142,3 +158,4 @@ userInput.addEventListener("keypress", (e) => {
     sendMessage();
   }
 });
+
