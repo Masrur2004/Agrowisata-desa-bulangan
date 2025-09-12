@@ -126,7 +126,9 @@ function sendMessage() {
   const botMsg = document.createElement("div");
   botMsg.classList.add("chat-message", "bot");
 
-  if (text.toLowerCase().includes("alamat")) {
+  if (text.toLowerCase().includes("hai")) {
+    botMsg.textContent = "Bot: Baik, senang bertemu dengan mu, pakah ada yang bisa saya bantu";
+    } else if (text.toLowerCase().includes("alamat")) {
     botMsg.textContent = "Bot: Lokasi agrowisata di Desa Bulangan, Kecamatan Dukun, Gresik.";
   } else if (text.toLowerCase().includes("kenapa website ini di buat")) {
     botMsg.textContent = "Bot: untuk edukasi agar di kenal wisatawan secara luas";
@@ -158,4 +160,42 @@ userInput.addEventListener("keypress", (e) => {
     sendMessage();
   }
 });
+// Ambil elemen modal
+const newsOverlay = document.getElementById("newsOverlay");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const closeModal = document.getElementById("closeModal");
+
+// Semua item news
+const newsItems = document.querySelectorAll(".news-item");
+
+// Klik item → buka modal
+newsItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const img = item.querySelector("img").src;
+    const title = item.querySelector("h3").innerText;
+    const desc = item.querySelector("p").innerText;
+
+    modalImg.src = img;
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+
+    newsOverlay.style.display = "flex"; // tampilkan modal
+  });
+});
+
+// Tutup modal
+closeModal.addEventListener("click", () => {
+  newsOverlay.style.display = "none";
+});
+
+// Klik luar modal → tutup
+newsOverlay.addEventListener("click", (e) => {
+  if (e.target === newsOverlay) {
+    newsOverlay.style.display = "none";
+  }
+});
+
+
 
