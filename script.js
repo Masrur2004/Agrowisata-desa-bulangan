@@ -196,6 +196,3 @@ newsOverlay.addEventListener("click", (e) => {
     newsOverlay.style.display = "none";
   }
 });
-
-
-
