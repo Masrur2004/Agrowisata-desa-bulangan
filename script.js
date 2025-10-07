@@ -127,9 +127,9 @@ function sendMessage() {
   botMsg.classList.add("chat-message", "bot");
 
   if (text.toLowerCase().includes("hai")) {
-    botMsg.textContent = "Bot: Baik, senang bertemu dengan mu, pakah ada yang bisa saya bantu";
+    botMsg.textContent = "Bot: Baik, senang bertemu dengan mu, Apakah ada yang bisa saya bantu";
     } else if (text.toLowerCase().includes("alamat")) {
-    botMsg.textContent = "Bot: Lokasi agrowisata di Desa Bulangan, Kecamatan Dukun, Gresik.";
+    botMsg.textContent = "Bot: Lokasi Agrowisata di Desa Bulangan, Kecamatan Dukun, Gresik. kamu bisa cek pada halaman lokasi di atas!";
   } else if (text.toLowerCase().includes("kenapa website ini di buat")) {
     botMsg.textContent = "Bot: untuk edukasi agar di kenal wisatawan secara luas";
   } else if (text.toLowerCase().includes("siapa yang buat website ini")) {
